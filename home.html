@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>{Title} - {Description}</title>
+    <title>Sadman Khan</title>
 
     <style type="text/css">
         * {
@@ -31,7 +31,7 @@
         }
 
         #description {
-            font-size: 11px;
+            font-size: 14px;
             font-weight: normal;
         }
 
@@ -112,99 +112,28 @@
 <body>
 
 <header>
-    <h1><a href="{BlogURL}" id="title">{Title}</a></h1>
-    {block:Description}
-    <h2 id="description">{Description}</h2>
+    <h1 id="title">Sadman Khan</h1>
+    <h1 id="description">Working on Amazing Ideas with Amazing People</h1>
+</header>
 
-    <h2 id="links">
-        <a href="https://twitter.com/ryh1113">Twitter</a>
-        •
-        <a href="{BlogURL}archive">Archive</a>
-        •
+<header>
+        <h2 id="links">
+        <a href="https://ca.linkedin.com/in/sh6khan">LinkedIn</a>
+        
         <a href="https://github.com/aaron-elkins">Github</a>
-        •
-        <a href="mailto:threcius@yahoo.com">Email</a> 
+        
+        <a href="mailto:threcius@yahoo.com">Projects</a> 
     </h2>
-    {/block:Description}
 </header>
 
 <div class="content">
-    {block:Posts}
-    
-        {block:Text}
-        <div class="post">
-          {block:Title}
-          <h3>
-              <a href="{Permalink}" class="post-title">{Title}</a>
-          </h3>
-          {/block:Title}
-          {Body}
 
-          <ul class="like-reblog">
-             <li>{LikeButton}</li>
-             <li>{ReblogButton}</li>
-             <li>{block:NoteCount}{NoteCountWithLabel}{/block:NoteCount}</li>
-             <li class="post-time">{block:Date}{TimeAgo}{/block:Date}</li>
-          </ul>
+    <p> I am a student at the University of Waterloo currently studying Computer Engineering. I grew up in Toronto, went to school at Waterloo and very recently finished an internship in San Fransisco. I spend a lot of time building distrubuted systems that are being used at Coinbase and responsible for handeling millions of dollars. I also love building complex, reliable libraries designed make the lives of other developers much easier.</p>
 
-          <div style="clear:both; margin-bottom: 36px;"></div>
-          {block:PermalinkPage}
-            {block:PostNotes}
-                {PostNotes-64}
-            {/block:PostNotes}
-          {/block:PermalinkPage}
-        </div>
-        {/block:Text}
-        
-        {block:Photo}
-          <div class="post">
-            <img src="{PhotoURL-500}">
-            {block:Caption}{Caption}{/block:Caption}
-          </div>
-        {/block:Photo}
-        
-        {block:Quote}
-          <div class="post">
-            {Quote}
-            {block:Source}<br>&mdash;{Source}{/block:Source}
-          </div>
-        {/block:Quote}
-        
-        {block:Link}
-          <div class="post">
-            <a href="{URL}" {Target}>{Name}</a>
-            {block:Description}{Description}{/block:Description}
-          </div>
-        {/block:Link}
-        
-        {block:Chat}
-          <div class="post">
-            <table>
-              {block:Lines}
-                <tr>
-                  <th>{block:Label}{Label}{/block:Label}</th>
-                  <td>{Line}</td>
-                </tr>
-              {/block:Lines}
-            </table>
-          </div>
-        {/block:Chat}
-        
-        {block:Audio}
-          <div class="post">
-            {AudioPlayer}
-            {block:Caption}{Caption}{/block:Caption}
-          </div>
-        {/block:Audio}
-        
-        
-        {block:Video}
-          <div class="post">
-            {Video-500}
-            {block:Caption}{Caption}{/block:Caption}
-          </div>
-        {/block:Video}
-    {/block:Posts}
+    <p>In the past I have interned at Coinbase, Dejero, and the University of Waterloo. With each Internship I got to take a deep dive into a brand new technology and each time its been exhilarating. I love learning new technologies and I'm an exceptionally quick learner. It helps that I have gotten to work with some of the most incredible people I have ever met, from the creator of LiteCoin to the lead on NASA's laser communication system.</p>
+
+    <p>My other passions include impuslive travelling, drinking coffee, reading, bouldering, Netflix and of course all things tech.</p>
+
 </div>
 
 </body>
