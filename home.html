@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{Title} - {Description}</title>
+
+    <style type="text/css">
+        * {
+            font-family: menlo, 'andale mono', 'courier new', sans-serif;
+            font-size: 11px;
+            color: #333333;
+        }
+
+        header {
+            margin-top: 48px;
+            margin-bottom: 78px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        h3 {
+            font-size: 11px;
+            font-weight: bold;;
+        }
+
+        #title {
+            text-decoration: none;
+        }
+
+        #description {
+            font-size: 11px;
+            font-weight: normal;
+        }
+
+        #links {
+            font-size: 11px;
+            font-weight: normal;
+        }
+
+        #links a {
+            margin-left: 3px;
+            margin-right: 3px;
+        }
+
+        a {
+            text-decoration: underline;
+            color: #111111;;
+        }
+
+        p {
+            width: 500px;
+            text-align: left;
+            line-height: 155%;
+        }
+
+        .content {
+            width: 500px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .post {
+            margin: 80px auto;
+        }
+
+        .post-title {
+            text-decoration: none;
+        }
+
+        .post-title:hover {
+            text-decoration: underline;
+        }
+
+        .like-reblog {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .like-reblog li {
+            margin:0;
+            padding: 0;
+            margin-left: 12px;
+            float: right;
+        }
+
+        .like-reblog .post-time {
+            float: left;
+            margin-left: 0;
+            padding: 0;
+            color: #999999;
+        }
+
+        .notes {
+            list-style: none;
+        }
+
+        .notes li {
+            margin: 2 auto;
+        }
+
+        .avatar {
+            line-height: 16px;
+            width: 16px;
+            height: 16px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1><a href="{BlogURL}" id="title">{Title}</a></h1>
+    {block:Description}
+    <h2 id="description">{Description}</h2>
+
+    <h2 id="links">
+        <a href="https://twitter.com/ryh1113">Twitter</a>
+        •
+        <a href="{BlogURL}archive">Archive</a>
+        •
+        <a href="https://github.com/aaron-elkins">Github</a>
+        •
+        <a href="mailto:threcius@yahoo.com">Email</a> 
+    </h2>
+    {/block:Description}
+</header>
+
+<div class="content">
+    {block:Posts}
+    
+        {block:Text}
+        <div class="post">
+          {block:Title}
+          <h3>
+              <a href="{Permalink}" class="post-title">{Title}</a>
+          </h3>
+          {/block:Title}
+          {Body}
+
+          <ul class="like-reblog">
+             <li>{LikeButton}</li>
+             <li>{ReblogButton}</li>
+             <li>{block:NoteCount}{NoteCountWithLabel}{/block:NoteCount}</li>
+             <li class="post-time">{block:Date}{TimeAgo}{/block:Date}</li>
+          </ul>
+
+          <div style="clear:both; margin-bottom: 36px;"></div>
+          {block:PermalinkPage}
+            {block:PostNotes}
+                {PostNotes-64}
+            {/block:PostNotes}
+          {/block:PermalinkPage}
+        </div>
+        {/block:Text}
+        
+        {block:Photo}
+          <div class="post">
+            <img src="{PhotoURL-500}">
+            {block:Caption}{Caption}{/block:Caption}
+          </div>
+        {/block:Photo}
+        
+        {block:Quote}
+          <div class="post">
+            {Quote}
+            {block:Source}<br>&mdash;{Source}{/block:Source}
+          </div>
+        {/block:Quote}
+        
+        {block:Link}
+          <div class="post">
+            <a href="{URL}" {Target}>{Name}</a>
+            {block:Description}{Description}{/block:Description}
+          </div>
+        {/block:Link}
+        
+        {block:Chat}
+          <div class="post">
+            <table>
+              {block:Lines}
+                <tr>
+                  <th>{block:Label}{Label}{/block:Label}</th>
+                  <td>{Line}</td>
+                </tr>
+              {/block:Lines}
+            </table>
+          </div>
+        {/block:Chat}
+        
+        {block:Audio}
+          <div class="post">
+            {AudioPlayer}
+            {block:Caption}{Caption}{/block:Caption}
+          </div>
+        {/block:Audio}
+        
+        
+        {block:Video}
+          <div class="post">
+            {Video-500}
+            {block:Caption}{Caption}{/block:Caption}
+          </div>
+        {/block:Video}
+    {/block:Posts}
+</div>
+
+</body>
+</html>
